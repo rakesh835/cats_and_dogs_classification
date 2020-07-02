@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title> 
+      Cats and Dogs Classification</title>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/yeti/bootstrap.min.css" rel="stylesheet" media="screen">
+
+    <script src="{{ url_for('static', filename='upload.js') }}"></script>
+    <link href="{{ url_for('static', filename='app.css') }}" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="jumbotron text-center">
+        <h2><b>Web App for Cats and Dogs Classification</b></h2>
+    </div>
+    
+    <div class="container text-center">
+        
+           
+            
+    <form action="/uploaded" method="POST" enctype="multipart/form-data">
+        
+        
+        <h3>Upload image for Recognition</h3>
+
+        <h3> <u>Upload only Cat or Dog images<u></h3>
+        <h4>Otherwise it will show wrong result</h4>
+        
+        <input type='file' name='file' onchange="readURL(this)" style="margin:0px auto; display:block;" /><br>
+        
+	{% block content %}
+    
+    {% endblock %}
+	       
+	<button type="submit">Submit & predict</button>
+
+    </form>
+ 
+
+</div>
+
+</body>
+
+</html> 
